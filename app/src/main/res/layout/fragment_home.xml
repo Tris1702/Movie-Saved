@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/homeFragment"
+    android:background="@color/black"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".HomeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+
+        android:layout_height="wrap_content"
+        android:background="@drawable/finishedmovie">
+        <ImageView
+            android:id="@+id/film_ic"
+            android:layout_margin="15dp"
+            android:layout_height="10dp"
+            android:layout_width="10dp"
+            android:src="@drawable/film"
+            />
+        <TextView
+            android:id="@+id/txt_finished_movie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/film_ic"
+            android:text="Finished movie"
+            android:layout_marginTop="5dp"
+            android:textSize="15sp"
+            android:textColor="@color/word1"
+            android:layout_toEndOf="@+id/film_ic" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:layout_below="@+id/txt_finished_movie"
+            android:layout_toEndOf="@+id/film_ic"
+            android:layout_toRightOf="@+id/film_ic" />
+        <Button
+            android:id="@+id/btn_show_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/txt_finished_movie"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="70dp"
+            android:background="@drawable/roundcorner"
+            android:text="Show in List"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:layout_toRightOf="@+id/txt_finished_movie" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/finishedmovie">
+        <ImageView
+            android:id="@+id/continue_ic"
+            android:layout_margin="10dp"
+            android:layout_height="15dp"
+            android:layout_width="15dp"
+            android:src="@drawable/continue_ic"
+            />
+        <TextView
+            android:id="@+id/txt_continue_film"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/continue_ic"
+            android:text="On watching movie"
+            android:layout_marginTop="5dp"
+            android:textSize="15sp"
+            android:textColor="@color/word3"
+            android:layout_toEndOf="@+id/continue_ic" />
+        <TextView
+            android:id="@+id/name_of_continue_movie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You don't have any"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:layout_below="@+id/txt_continue_film"
+            android:layout_toEndOf="@+id/continue_ic"
+            android:layout_toRightOf="@+id/continue_ic"
+            android:layout_marginBottom="10dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/finishedmovie">
+        <ImageView
+            android:id="@+id/today_film_ic"
+            android:layout_margin="10dp"
+            android:layout_height="15dp"
+            android:layout_width="15dp"
+            android:src="@drawable/recommend"
+            />
+        <TextView
+            android:id="@+id/txt_today_film"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/today_film_ic"
+            android:text="Movie of Today"
+            android:layout_marginTop="5dp"
+            android:textSize="15sp"
+            android:textColor="@color/word4"
+            android:layout_toEndOf="@+id/today_film_ic"/>
+        <TextView
+            android:id="@+id/name_of_today_film"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="America's Horror Story"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_below="@+id/txt_today_film"
+            android:layout_toEndOf="@+id/today_film_ic"
+            android:layout_toRightOf="@+id/today_film_ic" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/roundcorner"
+            android:layout_toEndOf="@+id/name_of_today_film"
+            android:layout_toRightOf="@+id/name_of_today_film"
+            android:text="Discover"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/finishedmovie">
+        <ImageView
+            android:id="@+id/review_film_ic"
+            android:layout_margin="10dp"
+            android:layout_height="15dp"
+            android:layout_width="15dp"
+            android:src="@drawable/edit"
+            />
+        <TextView
+            android:id="@+id/txt_review_film"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/review_film_ic"
+            android:text="Add another done Movie"
+            android:layout_marginTop="5dp"
+            android:textSize="15sp"
+            android:textColor="@color/word5"
+            android:layout_toEndOf="@+id/review_film_ic"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_toEndOf="@+id/review_film_ic"
+            android:layout_below="@+id/txt_review_film"
+            android:layout_toRightOf="@+id/review_film_ic">
+            <Button
+                android:id="@+id/btn_continue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="add"
+                android:textSize="10sp"
+                android:textColor="@color/white"
+                android:layout_margin="10dp"
+                android:background="@drawable/roundcorner"
+                tools:ignore="SmallSp" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
