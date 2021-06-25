@@ -6,12 +6,4 @@
     android:background="@color/black"
     tools:context=".ListOfFinishedMovieFragment">
 
-    <Button
-        android:id="@+id/backToHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        android:textColor="@color/word2"/>
-
-
 </FrameLayout>

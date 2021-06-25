@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,15 +8,61 @@
     tools:context=".AddMovieFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="back"
-        android:textColor="@color/word2" />
 
     <ImageView
+        android:id="@+id/poster"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:src="@drawable/blankmovie" />
+        android:src="@drawable/blankmovie"/>
 
-</FrameLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp"
+        android:orientation="vertical"
+        android:layout_below="@+id/poster">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            >
+            <LinearLayout
+                android:layout_width="205dp"
+                android:background="@color/quite_black"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Imdb: "
+                    android:textSize="15sp"
+                    android:layout_marginLeft="50dp"
+                    android:textColor="@color/white"/>
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="5"
+                    android:textColorHint="@color/word2"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="205dp"
+                android:background="@color/quite_black"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your score: "
+                    android:textSize="15sp"
+                    android:layout_marginLeft="50dp"
+                    android:textColor="@color/white"/>
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="5"
+                    android:textColorHint="@color/word2"/>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

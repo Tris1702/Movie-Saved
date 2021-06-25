@@ -37,13 +37,6 @@ class ListOfFinishedMovieFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_list_of_finished_movie, container, false)
-        val btn_back_to_home = view.findViewById<Button>(R.id.backToHome)
-
-        btn_back_to_home.setOnClickListener{
-            Navigation.findNavController(view).navigate(R.id.action_listOfFinishedMovieFragment_to_homeFragment)
-
-        }
-
         return view
     }
 

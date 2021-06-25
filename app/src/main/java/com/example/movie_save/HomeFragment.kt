@@ -41,7 +41,11 @@ class HomeFragment : Fragment() {
 
         btn_show_list.setOnClickListener{
             Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_listOfFinishedMovieFragment)
+        }
 
+        val btn_add = view.findViewById<Button>(R.id.btn_add)
+        btn_add.setOnClickListener{
+            Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_addMovieFragment)
         }
 
         return view

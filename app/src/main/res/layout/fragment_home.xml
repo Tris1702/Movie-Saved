@@ -173,7 +173,7 @@
             android:layout_below="@+id/txt_review_film"
             android:layout_toRightOf="@+id/review_film_ic">
             <Button
-                android:id="@+id/btn_continue"
+                android:id="@+id/btn_add"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="add"
