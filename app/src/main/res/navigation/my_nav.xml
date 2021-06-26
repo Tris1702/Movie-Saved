@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_homeFragment_to_addMovieFragment"
             app:destination="@id/addMovieFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_todayMovieFragment"
+            app:destination="@id/todayMovieFragment" />
     </fragment>
     <fragment
         android:id="@+id/watchLaterFragment"
@@ -26,7 +29,11 @@
         android:id="@+id/shuffleFragment"
         android:name="com.example.movie_save.ShuffleFragment"
         android:label="New Movie - New Emotion"
-        tools:layout="@layout/fragment_shuffle" />
+        tools:layout="@layout/fragment_shuffle" >
+        <action
+            android:id="@+id/action_shuffleFragment_to_todayMovieFragment"
+            app:destination="@id/todayMovieFragment" />
+    </fragment>
     <fragment
         android:id="@+id/listOfFinishedMovieFragment"
         android:name="com.example.movie_save.ListOfFinishedMovieFragment"
@@ -43,6 +50,18 @@
         tools:layout="@layout/fragment_add_movie" >
         <action
             android:id="@+id/action_addMovieFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/todayMovieFragment"
+        android:name="com.example.movie_save.TodayMovieFragment"
+        android:label="fragment_today_movie"
+        tools:layout="@layout/fragment_today_movie" >
+        <action
+            android:id="@+id/action_todayMovieFragment_to_shuffleFragment"
+            app:destination="@id/shuffleFragment" />
+        <action
+            android:id="@+id/action_todayMovieFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

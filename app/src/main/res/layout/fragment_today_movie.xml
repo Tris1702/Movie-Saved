@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".TodayMovieFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:id="@+id/short_information"
+        android:layout_marginTop="250dp"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:background="@color/quite_black"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name of Movie"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="180dp"
+            android:layout_marginTop="25dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tags"
+            android:layout_marginLeft="180dp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/word2"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Score"
+            android:textColor="@color/gold"
+            android:textSize="40sp"
+            android:layout_marginLeft="180dp"
+            />
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/poster"
+        android:layout_width="190dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="220dp"
+        android:src="@drawable/blankposter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

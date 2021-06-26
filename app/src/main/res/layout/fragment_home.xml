@@ -129,6 +129,7 @@
             android:layout_toEndOf="@+id/today_film_ic"
             android:layout_toRightOf="@+id/today_film_ic" />
         <Button
+            android:id="@+id/btn_discover"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/roundcorner"
