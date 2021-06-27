@@ -15,4 +15,6 @@
     <color name="word5">#F0B125</color>
     <color name="quite_black">#1C1C1C</color>
     <color name="gold">#FFD700</color>
+    <color name="not_quite_white">#FCFAFF</color>
+    <color name="blue">#335CEE</color>
 </resources>

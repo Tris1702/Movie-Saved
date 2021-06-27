@@ -10,6 +10,13 @@
     tools:context=".HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_marginTop="20dp"
@@ -35,6 +42,7 @@
             android:textColor="@color/word1"
             android:layout_toEndOf="@+id/film_ic" />
         <TextView
+            android:id="@+id/number_of_finished_movie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
@@ -185,4 +193,6 @@
                 tools:ignore="SmallSp" />
         </LinearLayout>
     </RelativeLayout>
+    </LinearLayout>
+    </ScrollView>
 </LinearLayout>

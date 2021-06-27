@@ -1,12 +1,16 @@
 package com.example.movie_save
 
+import android.content.Intent
 import android.os.Bundle
+import android.provider.MediaStore
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.Toast
 import androidx.navigation.Navigation
 
 // TODO: Rename parameter arguments, choose names that match
@@ -16,10 +20,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
+ * Use the [AddWatchLaterMovieFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class HomeFragment : Fragment() {
+class AddWatchLaterMovieFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -37,23 +41,21 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_home, container, false)
-        val btn_show_list = view.findViewById<Button>(R.id.btn_show_list)
-
-        btn_show_list.setOnClickListener{
-            Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_listOfFinishedMovieFragment)
+        val view = inflater.inflate(R.layout.fragment_add_watch_later_movie, container, false)
+        val poster = view.findViewById<ImageView>(R.id.poster_watch_later)
+        poster.setOnClickListener{
+            val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
+            poster.setImageURI(gallery.data)
         }
-
-        val btn_add = view.findViewById<Button>(R.id.btn_add)
-        btn_add.setOnClickListener{
-            Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_addMovieFragment)
+        val btn_update = view.findViewById<Button>(R.id.btn_add)
+        btn_update.setOnClickListener{
+            val txt_name = view.findViewById<EditText>(R.id.name_of_watch_later).text.toString()
+            val score = view.findViewById<EditText>(R.id.score_of_watch_later).text.toString().toFloat()
+            val txt_brief = view.findViewById<EditText>(R.id.brief_watch_later).text.toString()
+            (activity as MainActivity).arrWatchLaterMovie.add(Movie(1, txt_name, score, txt_brief))
+            Toast.makeText(activity, "Your movie is added", Toast.LENGTH_LONG).show()
+            Navigation.findNavController(view).navigate(R.id.action_addWatchLaterMovieFragment_to_watchLaterFragment)
         }
-        val btn_discover = view.findViewById<Button>(R.id.btn_discover)
-        btn_discover.setOnClickListener{
-            Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_todayMovieFragment)
-        }
-        val number_of_finished_movie = view.findViewById<TextView>(R.id.number_of_finished_movie)
-        number_of_finished_movie.text = (activity as MainActivity).arrFinishedMovie.size.toString()
         return view
     }
 
@@ -64,12 +66,12 @@ class HomeFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeFragment.
+         * @return A new instance of fragment AddWatchLaterMovieFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
+            AddWatchLaterMovieFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

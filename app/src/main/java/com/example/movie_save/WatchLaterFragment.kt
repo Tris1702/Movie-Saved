@@ -1,10 +1,14 @@
 package com.example.movie_save
 
 import android.os.Bundle
+import android.os.RecoverySystem
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.Navigation
+import androidx.recyclerview.widget.RecyclerView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +38,20 @@ class WatchLaterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_watch_later, container, false)
+        val view = inflater.inflate(R.layout.fragment_watch_later, container, false)
+        val btn_add = view.findViewById<Button>(R.id.btn_add_watch_later)
+
+        val act = (activity as MainActivity)
+        act.findViewById<RecyclerView> (R.id.watch_later_recycler_view)?.let {
+            act.watchLaterRecyclerView =it
+            act.watchLaterRecyclerView.hasFixedSize()
+            act.movieAdapter2 = MovieAdapter(act.arrWatchLaterMovie)
+            act.watchLaterRecyclerView.adapter = act.movieAdapter2
+        }
+        btn_add.setOnClickListener{
+            Navigation.findNavController(view).navigate(R.id.action_watchLaterFragment_to_addWatchLaterMovieFragment)
+        }
+        return view
     }
 
     companion object {

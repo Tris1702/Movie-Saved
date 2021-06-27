@@ -14,6 +14,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:orientation="vertical">
         <TextView
+            android:id="@+id/name_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Name of Movie"
@@ -22,15 +23,17 @@
             android:layout_marginLeft="180dp"
             android:layout_marginTop="25dp"/>
         <TextView
+            android:id="@+id/brief_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tags"
+            android:text="Brief"
             android:layout_marginLeft="180dp"
             android:layout_marginTop="15dp"
             android:textColor="@color/word2"
             android:textSize="20sp"
             />
         <TextView
+            android:id="@+id/score_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Score"

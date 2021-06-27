@@ -12,19 +12,31 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_listOfFinishedMovieFragment"
-            app:destination="@id/listOfFinishedMovieFragment" />
+            app:destination="@id/listOfFinishedMovieFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim">
+
+        </action>
         <action
             android:id="@+id/action_homeFragment_to_addMovieFragment"
-            app:destination="@id/addMovieFragment" />
+            app:destination="@id/addMovieFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
         <action
             android:id="@+id/action_homeFragment_to_todayMovieFragment"
-            app:destination="@id/todayMovieFragment" />
+            app:destination="@id/todayMovieFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/watchLaterFragment"
         android:name="com.example.movie_save.WatchLaterFragment"
         android:label="Watch later Movie"
-        tools:layout="@layout/fragment_watch_later" />
+        tools:layout="@layout/fragment_watch_later" >
+        <action
+            android:id="@+id/action_watchLaterFragment_to_addWatchLaterMovieFragment"
+            app:destination="@id/addWatchLaterMovieFragment" />
+    </fragment>
     <fragment
         android:id="@+id/shuffleFragment"
         android:name="com.example.movie_save.ShuffleFragment"
@@ -32,7 +44,9 @@
         tools:layout="@layout/fragment_shuffle" >
         <action
             android:id="@+id/action_shuffleFragment_to_todayMovieFragment"
-            app:destination="@id/todayMovieFragment" />
+            app:destination="@id/todayMovieFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/listOfFinishedMovieFragment"
@@ -41,7 +55,9 @@
         tools:layout="@layout/fragment_list_of_finished_movie" >
         <action
             android:id="@+id/action_listOfFinishedMovieFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/addMovieFragment"
@@ -50,7 +66,9 @@
         tools:layout="@layout/fragment_add_movie" >
         <action
             android:id="@+id/action_addMovieFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/todayMovieFragment"
@@ -59,9 +77,36 @@
         tools:layout="@layout/fragment_today_movie" >
         <action
             android:id="@+id/action_todayMovieFragment_to_shuffleFragment"
-            app:destination="@id/shuffleFragment" />
+            app:destination="@id/shuffleFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
         <action
             android:id="@+id/action_todayMovieFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="None" />
+        <argument
+            android:name="score"
+            app:argType="float" />
+        <argument
+            android:name="brief"
+            app:argType="string"
+            android:defaultValue="None" />
+        <argument
+            android:name="idImg"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/addWatchLaterMovieFragment"
+        android:name="com.example.movie_save.AddWatchLaterMovieFragment"
+        android:label="fragment_add_watch_later_movie"
+        tools:layout="@layout/fragment_add_watch_later_movie" >
+        <action
+            android:id="@+id/action_addWatchLaterMovieFragment_to_watchLaterFragment"
+            app:destination="@id/watchLaterFragment" />
     </fragment>
 </navigation>

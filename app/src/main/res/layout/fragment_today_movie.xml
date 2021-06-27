@@ -11,12 +11,13 @@
         android:id="@+id/short_information"
         android:layout_marginTop="250dp"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="wrap_content"
         android:background="@color/quite_black"
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:orientation="vertical">
         <TextView
+            android:id="@+id/name_of_today_film"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Name of Movie"
@@ -25,15 +26,17 @@
             android:layout_marginLeft="180dp"
             android:layout_marginTop="25dp"/>
         <TextView
+            android:id="@+id/brief"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tags"
+            android:text="Brief"
             android:layout_marginLeft="180dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="5dp"
             android:textColor="@color/word2"
-            android:textSize="20sp"
-            />
+            android:textSize="10sp"
+            tools:ignore="SmallSp" />
         <TextView
+            android:id="@+id/score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Score"

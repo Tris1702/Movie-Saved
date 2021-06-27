@@ -1,35 +1,22 @@
 package com.example.movie_save
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [AddMovieFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class AddMovieFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    lateinit var poster: ImageView
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,26 +24,49 @@ class AddMovieFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_add_movie, container, false)
+        poster = view.findViewById<ImageView>(R.id.poster)
+        poster.setOnClickListener{
+
+/*
+*
+* Muon hieu thi cu bam vao ham roi dich ra se hieu =)) vang anh, the gio em co anh roi, em muon luu tru lai de sau con dung de hien thi tren 1 recyclerview, thi chuyen ve bitmap a?
+* uhm dung roi anh tim bai viet cho
+*
+*
+* @TypeConverter em dung cai nay de convert 1 object phuc tap thanh object co ban nhu dang string hay interger ... no nhu ma hoa ay em
+* */
+            // anh giai thich nhe /// e dung intent de gui qua vao app he thong
+            // xong roi anh chon dc anh thi anh override cai ham onActitivy result thi chon dc cai anh
+            // thi minh catch dc data theo duoi dang object Intent ///... hieu chua de em doc lai
+            val intent = Intent()
+            intent.type = "image/*" // cai nay kieu no phat lenh trong he thong nhu terminter cuar ubuntu ay
+            intent.action = Intent.ACTION_GET_CONTENT
+            startActivityForResult(Intent.createChooser(intent, "Select Picture"), 1)
+
+//            lifecycleScope.launch(Dispatchers.IO){
+//                val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
+////                Log.d("check","check is enable ")
+//                withContext(Dispatchers.Default){
+//
+//
+//                }
+//            }
+        }
+        val btn_update = view.findViewById<Button>(R.id.btn_update)
+        btn_update.setOnClickListener{
+            val txt_name = view.findViewById<EditText>(R.id.name_of_the_movie).text.toString()
+            val score = view.findViewById<EditText>(R.id.score_of_the_movie).text.toString().toFloat()
+            val txt_brief = view.findViewById<EditText>(R.id.brief_about_movie).text.toString()
+            (activity as MainActivity).arrFinishedMovie.add(Movie(1, txt_name, score, txt_brief))
+            Toast.makeText(activity, "Your movie is saved", Toast.LENGTH_LONG).show()
+            Navigation.findNavController(view).navigate(R.id.action_addMovieFragment_to_homeFragment)
+        }
         return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment AddMovieFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            AddMovieFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == 1){
+            poster.setImageURI(data?.data)
+        }
     }
 }

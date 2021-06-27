@@ -7,20 +7,31 @@
     tools:context=".WatchLaterFragment">
 
     <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/watch_later_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+    </ScrollView>
     <Button
-        android:layout_marginBottom="60dp"
+        android:id="@+id/btn_add_watch_later"
+        android:layout_marginBottom="59dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Add"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:text="Add"
+        android:layout_marginRight="30dp"
         android:background="@drawable/roundcorner"
-        />
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/watch_later_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        />
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="30dp" />
 </RelativeLayout>

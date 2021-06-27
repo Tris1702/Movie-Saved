@@ -1,10 +1,14 @@
 package com.example.movie_save
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import org.w3c.dom.Text
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +25,12 @@ class TodayMovieFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    lateinit var txtNameOfTodayMovie: TextView
+    lateinit var txtBrief: TextView
+    lateinit var score : TextView
+    lateinit var poster: ImageView
+    var idImg = 0L
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -34,26 +44,17 @@ class TodayMovieFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_today_movie, container, false)
-    }
+        val view = inflater.inflate(R.layout.fragment_today_movie, container, false)
+        txtNameOfTodayMovie = view.findViewById(R.id.name_of_today_film)
+        txtBrief = view.findViewById(R.id.brief)
+        poster = view.findViewById(R.id.poster)
+        score = view.findViewById(R.id.score)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment TodayMovieFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            TodayMovieFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        txtNameOfTodayMovie.text = arguments?.getString("name")
+        txtBrief.text = arguments?.getString("brief")
+        score.text = arguments?.getFloat("score").toString()
+        idImg = arguments?.getLong("idImg")!!
+        poster.setImageResource(resources.getIdentifier("ran"+idImg.toString(), "drawable", "com.example.movie_save"))
+        return view
     }
 }
