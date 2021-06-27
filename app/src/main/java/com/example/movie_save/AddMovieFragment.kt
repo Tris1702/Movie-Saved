@@ -58,8 +58,10 @@ class AddMovieFragment : Fragment() {
             val score = view.findViewById<EditText>(R.id.score_of_the_movie).text.toString().toFloat()
             val txt_brief = view.findViewById<EditText>(R.id.brief_about_movie).text.toString()
             (activity as MainActivity).arrFinishedMovie.add(Movie(1, txt_name, score, txt_brief))
+            (activity as MainActivity).movieAdapter1.notifyDataSetChanged()
             Toast.makeText(activity, "Your movie is saved", Toast.LENGTH_LONG).show()
             Navigation.findNavController(view).navigate(R.id.action_addMovieFragment_to_homeFragment)
+
         }
         return view
     }

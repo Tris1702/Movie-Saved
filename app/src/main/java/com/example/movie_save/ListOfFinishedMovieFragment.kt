@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 // TODO: Rename parameter arguments, choose names that match
@@ -40,15 +41,15 @@ class ListOfFinishedMovieFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_list_of_finished_movie, container, false)
         val act = (activity as MainActivity)
+        val linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         view.findViewById<RecyclerView>(R.id.finished_movie_recycler_view)?.let{
-
             act.finishedMovieRecyclerView =it
+            act.finishedMovieRecyclerView.layoutManager = linearLayoutManager
             Log.e("tris","this")
-            act.finishedMovieRecyclerView.hasFixedSize()
+//            act.finishedMovieRecyclerView.hasFixedSize()
             act.movieAdapter1 = MovieAdapter(act.arrFinishedMovie)
             act.finishedMovieRecyclerView.adapter = act.movieAdapter1
         }
-
         return view
     }
 

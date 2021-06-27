@@ -18,8 +18,8 @@ class MainActivity : AppCompatActivity(){
 
     var arrWatchLaterMovie = ArrayList<Movie>()
     var arrFinishedMovie = ArrayList<Movie>()
-    lateinit var movieAdapter1: MovieAdapter
-    lateinit var movieAdapter2: MovieAdapter
+    var movieAdapter1 = MovieAdapter (ArrayList<Movie>())
+    var movieAdapter2 = MovieAdapter (ArrayList<Movie>())
     lateinit var watchLaterRecyclerView: RecyclerView
     lateinit var finishedMovieRecyclerView: RecyclerView
 
@@ -36,8 +36,6 @@ class MainActivity : AppCompatActivity(){
         val appBarConfiguration = AppBarConfiguration(setOf(R.id.homeFragment, R.id.watchLaterFragment, R.id.shuffleFragment))
         setupActionBarWithNavController(navController, appBarConfiguration)
         bottomNavigationView.setupWithNavController(navController)
-
-
     }
 
     override fun onSupportNavigateUp(): Boolean {
