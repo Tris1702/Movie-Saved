@@ -26,21 +26,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="60dp"
-        android:orientation="vertical"
-        android:layout_below="@+id/poster">
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_alignParentBottom="true"
-            >
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="205dp"
                 android:background="@color/quite_black"
                 android:layout_height="match_parent">
                 <TextView
-
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Imdb: "
@@ -52,29 +49,11 @@
                     android:id="@+id/score_of_the_movie"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="5.0"
+                    android:hint="@string/score55"
+
                     android:textColor="@color/white"
                     android:inputType="numberDecimal"
                     android:textColorHint="@color/word2" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="205dp"
-                android:background="@color/quite_black"
-                android:layout_height="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Your score: "
-                    android:textSize="15sp"
-                    android:layout_marginLeft="50dp"
-                    android:textColor="@color/white"/>
-                <EditText
-                    android:inputType="numberDecimal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="5"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/word2"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout

@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -15,9 +16,10 @@ class MovieAdapter(private var dataMovie: ArrayList<Movie>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.imageView.setImageBitmap(dataMovie[position].bitmapImg)
         holder.name.text = dataMovie[position].name
         holder.brief.text = dataMovie[position].brief
-        holder.score.text = dataMovie[position].score.toString()
+        holder.score.text = dataMovie[position].score.toString() + "/5.0"
     }
 
     override fun getItemCount(): Int {
@@ -25,7 +27,7 @@ class MovieAdapter(private var dataMovie: ArrayList<Movie>) :
     }
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         var name: TextView = itemView.findViewById(R.id.name_item)
-        var poster = 0
+        var imageView: ImageView = itemView.findViewById(R.id.poster)
         var brief: TextView = itemView.findViewById(R.id.brief_item)
         var score: TextView = itemView.findViewById(R.id.score_item)
     }

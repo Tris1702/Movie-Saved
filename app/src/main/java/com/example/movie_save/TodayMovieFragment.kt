@@ -10,34 +10,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import org.w3c.dom.Text
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [TodayMovieFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class TodayMovieFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
     lateinit var txtNameOfTodayMovie: TextView
     lateinit var txtBrief: TextView
     lateinit var score : TextView
     lateinit var poster: ImageView
     var idImg = 0L
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,6 +32,7 @@ class TodayMovieFragment : Fragment() {
         txtBrief.text = arguments?.getString("brief")
         score.text = arguments?.getFloat("score").toString()
         idImg = arguments?.getLong("idImg")!!
+
         poster.setImageResource(resources.getIdentifier("ran"+idImg.toString(), "drawable", "com.example.movie_save"))
         return view
     }

@@ -50,10 +50,11 @@
                             android:id="@+id/score_of_watch_later"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:hint="5.0"
                             android:textColor="@color/white"
                             android:inputType="numberDecimal"
-                            android:textColorHint="@color/word2" />
+                            android:textColorHint="@color/word2"
+                            android:hint="@string/score55"/>
+
                     </LinearLayout>
                 </LinearLayout>
                 <LinearLayout
