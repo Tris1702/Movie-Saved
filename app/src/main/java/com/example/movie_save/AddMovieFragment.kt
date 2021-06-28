@@ -41,7 +41,7 @@ class AddMovieFragment : Fragment() {
             val txt_name = view.findViewById<EditText>(R.id.name_of_the_movie).text.toString()
             val txt_score = view.findViewById<EditText>(R.id.score_of_the_movie).text.toString()
             var score = 0.0f
-            if (txt_score.length >1) score = txt_score.toFloat()
+            if (txt_score.isNotEmpty()) score = txt_score.toFloat()
             val txt_brief = view.findViewById<EditText>(R.id.brief_about_movie).text.toString()
             (activity as MainActivity).arrFinishedMovie.add(Movie(bitmapImg, txt_name, score, txt_brief))
             (activity as MainActivity).movieAdapter1.notifyDataSetChanged()
