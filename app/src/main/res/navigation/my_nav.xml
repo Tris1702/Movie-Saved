@@ -51,7 +51,7 @@
     <fragment
         android:id="@+id/listOfFinishedMovieFragment"
         android:name="com.example.movie_save.ListOfFinishedMovieFragment"
-        android:label="fragment_list_of_finished_movie"
+        android:label="Your finished Movies"
         tools:layout="@layout/fragment_list_of_finished_movie" >
         <action
             android:id="@+id/action_listOfFinishedMovieFragment_to_homeFragment"
@@ -62,7 +62,7 @@
     <fragment
         android:id="@+id/addMovieFragment"
         android:name="com.example.movie_save.AddMovieFragment"
-        android:label="fragment_add_movie"
+        android:label="Another Movie - Another Journey"
         tools:layout="@layout/fragment_add_movie" >
         <action
             android:id="@+id/action_addMovieFragment_to_homeFragment"
@@ -73,7 +73,6 @@
     <fragment
         android:id="@+id/todayMovieFragment"
         android:name="com.example.movie_save.TodayMovieFragment"
-        android:label="fragment_today_movie"
         tools:layout="@layout/fragment_today_movie" >
         <action
             android:id="@+id/action_todayMovieFragment_to_shuffleFragment"
@@ -103,7 +102,7 @@
     <fragment
         android:id="@+id/addWatchLaterMovieFragment"
         android:name="com.example.movie_save.AddWatchLaterMovieFragment"
-        android:label="fragment_add_watch_later_movie"
+
         tools:layout="@layout/fragment_add_watch_later_movie" >
         <action
             android:id="@+id/action_addWatchLaterMovieFragment_to_watchLaterFragment"

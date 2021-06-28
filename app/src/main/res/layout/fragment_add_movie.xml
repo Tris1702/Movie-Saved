@@ -53,6 +53,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="5.0"
+                    android:textColor="@color/white"
                     android:inputType="numberDecimal"
                     android:textColorHint="@color/word2" />
             </LinearLayout>
@@ -68,9 +69,11 @@
                     android:layout_marginLeft="50dp"
                     android:textColor="@color/white"/>
                 <EditText
+                    android:inputType="numberDecimal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="5"
+                    android:textColor="@color/white"
                     android:textColorHint="@color/word2"/>
             </LinearLayout>
         </LinearLayout>

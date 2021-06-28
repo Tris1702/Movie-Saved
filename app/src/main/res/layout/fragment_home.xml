@@ -29,7 +29,7 @@
             android:layout_margin="15dp"
             android:layout_height="10dp"
             android:layout_width="10dp"
-            android:src="@drawable/film"
+            android:src="@drawable/ic_film"
             />
         <TextView
             android:id="@+id/txt_finished_movie"
@@ -78,7 +78,7 @@
             android:layout_margin="10dp"
             android:layout_height="15dp"
             android:layout_width="15dp"
-            android:src="@drawable/continue_ic"
+            android:src="@drawable/ic_next"
             />
         <TextView
             android:id="@+id/txt_continue_film"
@@ -114,7 +114,7 @@
             android:layout_margin="10dp"
             android:layout_height="15dp"
             android:layout_width="15dp"
-            android:src="@drawable/recommend"
+            android:src="@drawable/ic_movie_of_today"
             />
         <TextView
             android:id="@+id/txt_today_film"
@@ -162,7 +162,7 @@
             android:layout_margin="10dp"
             android:layout_height="15dp"
             android:layout_width="15dp"
-            android:src="@drawable/edit"
+            android:src="@drawable/ic_edit"
             />
         <TextView
             android:id="@+id/txt_review_film"
