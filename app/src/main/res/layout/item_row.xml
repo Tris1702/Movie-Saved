@@ -44,9 +44,9 @@
     </LinearLayout>
     <ImageView
         android:id="@+id/poster"
-        android:layout_width="190dp"
+        android:layout_width="150dp"
         android:layout_height="200dp"
         android:src="@drawable/blankposter"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
