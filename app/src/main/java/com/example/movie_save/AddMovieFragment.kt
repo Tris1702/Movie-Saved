@@ -17,7 +17,6 @@ import androidx.navigation.Navigation
 
 class AddMovieFragment : Fragment() {
     lateinit var poster: ImageView
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,10 +38,24 @@ class AddMovieFragment : Fragment() {
             val bitmapImg = (imageView.drawable as BitmapDrawable).bitmap
 
             val txt_name = view.findViewById<EditText>(R.id.name_of_the_movie).text.toString()
+            if (txt_name.isEmpty()){
+                val dialog = UnfIlledDialogFragment()
+                dialog.show((activity as MainActivity).supportFragmentManager, "warning message")
+                return@setOnClickListener
+            }
             val txt_score = view.findViewById<EditText>(R.id.score_of_the_movie).text.toString()
-            var score = 0.0f
-            if (txt_score.isNotEmpty()) score = txt_score.toFloat()
+            if (txt_score.isEmpty()){
+                val dialog = UnfIlledDialogFragment()
+                dialog.show((activity as MainActivity).supportFragmentManager, "warning message")
+                return@setOnClickListener
+            }
+            val score = txt_score.toFloat()
             val txt_brief = view.findViewById<EditText>(R.id.brief_about_movie).text.toString()
+            if (txt_brief.isEmpty()){
+                val dialog = UnfIlledDialogFragment()
+                dialog.show((activity as MainActivity).supportFragmentManager, "warning message")
+                return@setOnClickListener
+            }
             (activity as MainActivity).arrFinishedMovie.add(Movie(bitmapImg, txt_name, score, txt_brief))
             (activity as MainActivity).movieAdapter1.notifyDataSetChanged()
             Toast.makeText(activity, "Your movie is saved", Toast.LENGTH_LONG).show()
